@@ -1,16 +1,28 @@
 <script setup>
-import { reactive } from 'vue';
+import { ref, reactive } from 'vue';
 import Person from './components/Person.vue'
+import SingleItem from './components/SingleItem.vue'
 const person = reactive({
   name : 'arif',
   age : 33,
   country : 'Bangladesh'
 })
+
+const namea = ref('')
 </script>
 
 <template>
-  {{person.name}} {{ person.age }} {{ person.country }}
+  <p>{{person.name}} {{ person.age }} {{ person.country }}</p>
+  <p>ref name : {{ namea }}</p>
   <Person :person="person"/>
+
+  <!-- niche amra :name evabe kore pathaini karon evabe kore pathale SingleItem theke etake defineProps(['name'])
+  diye receive korar por input e v-model="name" dile error dekhato. child e change korle parent e change hoto na. mane parent e 
+  write able na. tai v-model hisebe pass korte hobe component e. erpor etake normal ekta variable hisebe recv korbo defineProps(['modelValue'])
+  evabe. erpor input e <input type="text" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" /> evabe likhbo. 
+  ekhane @input ta hocche event ei event e modelValue ta update hobe target.value diye mane input tar udpated value diye-->
+  <SingleItem v-model="namea"/>
+
 </template>
 
 <style scoped>
