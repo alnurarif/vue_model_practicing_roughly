@@ -3,6 +3,7 @@ import { ref, reactive } from 'vue';
 import Person from './components/Person.vue'
 import SingleItem from './components/SingleItem.vue'
 import MultipleItem from './components/MultipleItem.vue';
+import ButtonItem from './components/ButtonItem.vue';
 const person = reactive({
   name : 'arif',
   age : 33,
@@ -26,7 +27,10 @@ const namea = ref('')
   
   <MultipleItem v-model:name="person.name" v-model:age="person.age" v-model:country="person.country" />
   
-
+  <!-- nicher item ti click korar shateh sathe amader pass kora model ti change hoye reverse hoye jabe-->
+  <ButtonItem v-model:name="person.name" />
+  <ButtonItem v-model:name="person.age" />
+  <ButtonItem v-model:name="person.country" />
 </template>
 
 <style scoped>
