@@ -15,7 +15,7 @@ const namea = ref('')
   <p>{{person.name}} {{ person.age }} {{ person.country }}</p>
   <p>ref name : {{ namea }}</p>
   <Person :person="person"/>
-
+  <br/>
   <!-- niche amra :name evabe kore pathaini karon evabe kore pathale SingleItem theke etake defineProps(['name'])
   diye receive korar por input e v-model="name" dile error dekhato. child e change korle parent e change hoto na. mane parent e 
   write able na. tai v-model hisebe pass korte hobe component e. erpor etake normal ekta variable hisebe recv korbo defineProps(['modelValue'])
